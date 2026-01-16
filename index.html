@@ -1,30 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="he">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Retirement Guru – Digital Card</title>
-<style>
-body { margin:0; background:#000; }
-.card {
-  display:flex;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  height:100vh;
-}
-.card img {
-  width:100vw;
-  height:100vh;
-  object-fit:contain;
-  scroll-snap-align:start;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Retirement Guru - Digital Card</title>
+  <style>
+    body { margin:0; background:#000; }
+    .card { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; height:100vh; }
+    .slide { position:relative; flex:0 0 100vw; height:100vh; scroll-snap-align:start; }
+    .slide img { width:100%; height:100%; object-fit:contain; display:block; }
+
+    /* אזורי לחיצה שקופים (תכוון לפי הצורך) */
+    .tap { position:absolute; background:rgba(255,255,255,0); }
+
+    /* טלפון – בערך באזור הימני-אמצעי בתמונה */
+    .tap-phone { left:56%; top:52%; width:38%; height:14%; }
+
+    /* אימייל – מתחת לטלפון */
+    .tap-email { left:50%; top:67%; width:44%; height:14%; }
+  </style>
 </head>
 <body>
-<div class="card">
-  <img src="front.png" />
-  <img src="back.png" />
-</div>
+  <div class="card">
+    <div class="slide">
+      <img src="front.png" alt="Front">
+    </div>
+
+    <div class="slide">
+      <img src="back.png" alt="Back">
+
+      <!-- לחיצה להתקשר -->
+      <a class="tap tap-phone" href="tel:+972543089997" aria-label="Call"></a>
+
+      <!-- לחיצה לשליחת מייל -->
+      <a class="tap tap-email" href="mailto:ohadh@hotmail.com" aria-label="Email"></a>
+    </div>
+  </div>
 </body>
 </html>
