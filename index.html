@@ -9,7 +9,11 @@
     .card { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; height:100vh; }
     .slide { position:relative; flex:0 0 100vw; height:100vh; scroll-snap-align:start; }
   .slide img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
-
+.img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
     /* אזורי לחיצה שקופים (תכוון לפי הצורך) */
    .tap { position:absolute; background:rgba(255,255,255,0); z-index:5; }
 
@@ -32,10 +36,9 @@
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="slide">
-      <img src="front.png" alt="Front">
-    </div>
+ <div class="slide">
+  <div class="img-wrap">
+    <img src="back.png" alt="Back">
 
     <div class="slide">
       <img src="back.png" alt="Back">
