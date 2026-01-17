@@ -33,7 +33,17 @@
 
     /* Back: שמירת איש קשר (VCF) */
     .tap-vcf  { left:56%; top:76%; width:38%; height:10%; }
-  </style>
+
+  /* Front: לחיצה על כל התמונה = שמירת איש קשר */
+.tap-vcf-front {
+  position: absolute;
+  inset: 0;              /* מכסה 100% מהתמונה */
+  z-index: 30;
+}
+</style>
+
+
+
 </head>
 
 <body>
@@ -48,10 +58,7 @@
      download
      aria-label="Save Contact">
   </a>
-
 </div>
-
-
     <!-- דף 2 -->
     <div class="slide">
       <img src="back.png" alt="Back">
