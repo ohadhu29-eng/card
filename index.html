@@ -4,52 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Retirement Guru - Digital Card</title>
+
   <style>
     body { margin:0; background:#000; }
-    .card { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; height:100vh; }
-    .slide { position:relative; flex:0 0 100vw; height:100vh; scroll-snap-align:start; }
-  .slide img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
-.img-wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-    /* אזורי לחיצה שקופים (תכוון לפי הצורך) */
-   .tap { position:absolute; background:rgba(255,255,255,0); z-index:5; }
+    .card {
+      display:flex;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      height:100vh;
+      -webkit-overflow-scrolling: touch;
+    }
+    .slide {
+      position:relative;
+      flex:0 0 100vw;
+      height:100vh;
+      scroll-snap-align:start;
+    }
+    .slide img{
+      width:100vw;
+      height:100vh;
+      object-fit:contain;      /* חשוב: לא cover */
+      display:block;
+      pointer-events:none;     /* שלא "יתפוס" קליקים */
+    }
 
+    .tap { position:absolute; background:rgba(255,255,255,0); z-index:10; }
 
-    /* טלפון – בערך באזור הימני-אמצעי בתמונה */
-   .tap-phone {
-  left:56%;
-  top:49%;
-  width:38%;
-  height:5%;
-}
+    /* Back: טלפון (תשאיר כמו שעבד לך) */
+    .tap-phone { left:56%; top:49%; width:38%; height:8%; }
 
-.tap-email {
-  left:56%;
-  top:63%;
-  width:38%;
-  height:6%;
-}
+    /* Back: אימייל – נתחיל גבוה יותר כדי לצאת מהשחור */
+    .tap-email { left:56%; top:62%; width:38%; height:8%; }
 
+    /* Back: שמירת איש קשר (VCF) */
+    .tap-vcf  { left:56%; top:76%; width:38%; height:10%; }
   </style>
 </head>
-<body>
- <div class="slide">
-  <div class="img-wrap">
-    <img src="back.png" alt="Back">
 
+<body>
+  <div class="card">
+    <!-- דף 1 -->
+    <div class="slide">
+      <img src="front.png" alt="Front">
+    </div>
+
+    <!-- דף 2 -->
     <div class="slide">
       <img src="back.png" alt="Back">
 
-      <!-- לחיצה להתקשר -->
       <a class="tap tap-phone" href="tel:+972543089997" aria-label="Call"></a>
-
-      <!-- לחיצה לשליחת מייל -->
       <a class="tap tap-email" href="mailto:ohadh@hotmail.com" aria-label="Email"></a>
-<a class="tap" style="left:50%; top:82%; width:44%; height:12%;" href="ohad.vcf" download></a>
-
+      <a class="tap tap-vcf"  href="ohad.vcf" download aria-label="Save Contact"></a>
     </div>
   </div>
 </body>
