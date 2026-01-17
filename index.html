@@ -20,13 +20,13 @@
       height:100vh;
       scroll-snap-align:start;
     }
-    .slide img{
-      width:100vw;
-      height:100vh;
-      object-fit:contain;      /* חשוב: לא cover */
-      display:block;
-      pointer-events:none;     /* שלא "יתפוס" קליקים */
-    }
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  pointer-events:none;
+}
 
     .tap { position:absolute; background:rgba(255,255,255,0); z-index:10; }
 
